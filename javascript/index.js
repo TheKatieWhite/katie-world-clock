@@ -23,6 +23,18 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  //Tokyo
+  let tokyoElement = document.querySelector("#tokyo");
+  if (tokyoElement) {
+    let tokyoDateElement = tokyoElement.querySelector(".date");
+    let tokyoTimeElement = tokyoElement.querySelector(".time");
+    let tokyoTime = moment().tz("Asia/Tokyo");
+
+    tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do, YYYY");
+    tokyoTimeElement.innerHTML = tokyoTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
@@ -43,7 +55,15 @@ function updateCity(event) {
     "A"
   )}</small></div>
     </div>
-    <a href="/">Highlighted Cities</a>
+    <a href="/">
+          <img
+            src="images/world-clock.png"
+            class="logo"
+            alt="World Clock Logo"
+            title="Back to main cities"
+            width="40px"
+          />
+        </a>
   `;
 }
 
